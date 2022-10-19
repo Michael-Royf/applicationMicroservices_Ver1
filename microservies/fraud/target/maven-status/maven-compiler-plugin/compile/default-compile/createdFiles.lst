@@ -1,0 +1,6 @@
+com\michael\fraud\service\FraudCheckHistoryService.class
+com\michael\fraud\repository\FraudCheckHistoryRepository.class
+com\michael\fraud\entity\FraudCheckHistory$FraudCheckHistoryBuilder.class
+com\michael\fraud\entity\FraudCheckHistory.class
+com\michael\fraud\FraudApp.class
+com\michael\fraud\controller\FraudController.class

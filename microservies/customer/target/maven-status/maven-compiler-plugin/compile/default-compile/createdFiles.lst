@@ -1,0 +1,17 @@
+com\michael\customer\controller\CustomerController.class
+com\michael\customer\payload\response\HttpResponse.class
+com\michael\customer\exception\domain\CustomerIsFraudsterException.class
+com\michael\customer\exception\domain\EmailAlreadyExistException.class
+com\michael\customer\service\impl\CustomerServiceImpl.class
+com\michael\customer\repository\CustomerRepository.class
+com\michael\customer\service\CustomerService.class
+com\michael\customer\entity\Customer.class
+com\michael\customer\payload\request\CustomerRequest$CustomerRequestBuilder.class
+com\michael\customer\exception\domain\CustomerNotFoundException.class
+com\michael\customer\CustomerApp.class
+com\michael\customer\payload\response\CustomerResponse.class
+com\michael\customer\exception\GlobalException.class
+com\michael\customer\payload\response\CustomerResponse$CustomerResponseBuilder.class
+com\michael\customer\entity\Customer$CustomerBuilder.class
+com\michael\customer\payload\request\CustomerRequest.class
+com\michael\customer\config\CustomerConfig.class
