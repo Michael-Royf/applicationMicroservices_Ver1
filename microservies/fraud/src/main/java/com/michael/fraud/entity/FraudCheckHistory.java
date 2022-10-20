@@ -2,10 +2,7 @@ package com.michael.fraud.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -14,9 +11,17 @@ import java.time.LocalDateTime;
 @Setter
 @Builder
 @Entity
+@Table(name = "fraud")
 public class FraudCheckHistory {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(
+            name = "fraud_id_sequence",
+            sequenceName = "fraud_id_sequence"
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "fraud_id_sequence"
+    )
     private Long id;
     private Long customerId;
     private Boolean isFraudster;

@@ -4,15 +4,15 @@ spring:
   application:
     name: fraud
   datasource:
-    password: michael
-    url: jdbc:mysql://localhost:3306/example_17_10_amigos?useSSL=false&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-    username: michael
+    password: password
+    url: jdbc:postgresql://localhost:5432/fraud
+    username: amigoscode
   jpa:
     hibernate:
       ddl-auto: create-drop
     properties:
       hibernate:
-        dialect: org.hibernate.dialect.MySQL8Dialect
+        dialect: org.hibernate.dialect.PostgreSQLDialect
         format_sql: true
     show-sql: true
   zipkin:

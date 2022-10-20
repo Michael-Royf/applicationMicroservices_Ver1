@@ -2,10 +2,7 @@ package com.michael.notification.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @AllArgsConstructor
@@ -16,7 +13,14 @@ import java.time.LocalDateTime;
 @Entity
 public class Notification {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @SequenceGenerator(
+            name = "notification_id_sequence",
+            sequenceName = "notification_id_sequence"
+    )
+    @GeneratedValue(
+            strategy = GenerationType.SEQUENCE,
+            generator = "notification_id_sequence"
+    )
     private Long notificationId;
     private Long toCustomerId;
     private String toCustomerEmail;
