@@ -1,72 +1,72 @@
 services:
-  eureka-server:
-    image: michaelroyf87/eureka-server:latest
-    container_name: eureka-server
-    ports:
-      - "8761:8761"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-    depends_on:
-      - zipkin
-  apigw:
-    image: michaelroyf87/apigw:latest
-    container_name: apigw
-    ports:
-      - "8090:8090"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-    depends_on:
-      - zipkin
-      - eureka-server
-  customer:
-    image: michaelroyf87/customer:latest
-    container_name: customer
-    ports:
-      - "8080:8080"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-      - postgres
-    depends_on:
-      - zipkin
-      - postgres
-      - rabbitmq
-      - eureka-server
-  fraud:
-    image: michaelroyf87/fraud:latest
-    container_name: fraud
-    ports:
-      - "8081:8081"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-      - postgres
-    depends_on:
-      - zipkin
-      - postgres
-      - rabbitmq
-      - eureka-server
-  notification:
-    image: michaelroyf87/notification:latest
-    container_name: notification
-    ports:
-      - "8083:8083"
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    networks:
-      - spring
-      - postgres
-    depends_on:
-      - zipkin
-      - postgres
-      - rabbitmq
-      - eureka-server
+#  eureka-server:
+#    image: michaelroyf87/eureka-server:latest
+#    container_name: eureka-server
+#    ports:
+#      - "8761:8761"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#    depends_on:
+#      - zipkin
+#  apigw:
+#    image: michaelroyf87/apigw:latest
+#    container_name: apigw
+#    ports:
+#      - "8090:8090"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#    depends_on:
+#      - zipkin
+#      - eureka-server
+#  customer:
+#    image: michaelroyf87/customer:latest
+#    container_name: customer
+#    ports:
+#      - "8080:8080"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#      - postgres
+#    depends_on:
+#      - zipkin
+#      - postgres
+#      - rabbitmq
+#      - eureka-server
+#  fraud:
+#    image: michaelroyf87/fraud:latest
+#    container_name: fraud
+#    ports:
+#      - "8081:8081"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#      - postgres
+#    depends_on:
+#      - zipkin
+#      - postgres
+#      - rabbitmq
+#      - eureka-server
+#  notification:
+#    image: michaelroyf87/notification:latest
+#    container_name: notification
+#    ports:
+#      - "8083:8083"
+#    environment:
+#      - SPRING_PROFILES_ACTIVE=docker
+#    networks:
+#      - spring
+#      - postgres
+#    depends_on:
+#      - zipkin
+#      - postgres
+#      - rabbitmq
+#      - eureka-server
   zipkin:
     image: openzipkin/zipkin
     container_name: zipkin
@@ -93,7 +93,7 @@ services:
     volumes:
       - postgres:/data/postgres
     ports:
-      - "5432:5432"
+      - "5434:5432"
     networks:
       - postgres
     restart: unless-stopped
